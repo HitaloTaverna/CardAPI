@@ -9,15 +9,9 @@ import {
   ImageBackground,
 } from "react-native";
 import { getCards } from "../../services/axiosClient";
-import SelectDropdown from "react-native-select-dropdown";
 import { styles } from "./style";
-import bgImage from "../../images/Fundo1.png";
 import bgImage2 from "../../images/Fundo2.jpg";
-import bgImage3 from "../../images/Game.jpg";
 import { useNavigation } from "@react-navigation/native";
-import header1 from "../../images/tf1.jpg";
-import header2 from "../../images/tf2.jpg";
-import header3 from "../../images/header.jpg";
 
 const Game = ({ route }) => {
   const { deckId } = route.params;
@@ -25,11 +19,7 @@ const Game = ({ route }) => {
   const [primeiro, setPrimeiro] = useState(0);
   const [contador, setContador] = useState(3);
   const navegacao = useNavigation();
-  // const [valor, setValor] = useState([{}]);
-  // const [naipe, setNaipe] = useState("");
-
-  // const cartasEscolha = ["Ás", "2", "3", "4","5","6","7","8","9","10","Valete","Dama","Rei"]
-  // const naipeEscolha = ["Espadas","Copas","Paus","Ouros"]
+  
 
   const adicionarCarta = async () => {
     const deck = await getCards(deckId, 4);
@@ -42,9 +32,7 @@ const Game = ({ route }) => {
       );
       return navi();
     }
-    // console.log(cards)
-    // console.log(cards.cards[0].value)
-    //verificar()
+    
   };
 
   const navi = () => {
